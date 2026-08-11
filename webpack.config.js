@@ -24,6 +24,19 @@ export default {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      // 1. Ensina o Webpack a ler as tags <img> dentro do HTML
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      // 2. Copia as imagens encontradas para a pasta dist preservando o nome
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: 'img/[name][ext]'
+        }
+      }
     ],
   },
   devServer: {
