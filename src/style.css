@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Flexbox no body para centralizar o bloco .main no meio da tela */
+  display: flex;
+  justify-content: center; /* Cria as margens/espaços iguais nas laterais */
+  min-height: 100vh;
+  padding: 20px;
+  /*Tira as bordas brancas*/
+  margin: 0;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  /**/
+  color: white;
+  background: linear-gradient(90deg, #020206, #24284a, #020206);
+}
+
+.main {
+  /* Largura do bloco central */
+  width: 100%;
+  max-width: 800px; /* Impede de ficar gigante em monitores grandes */
+
+  /* Flexbox no main para alinhar o título, input e GIFs em coluna */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o título e input */
+  gap: 20px; /* Espaçamento vertical entre título, input e gifs */
+}
+
+.icone-E-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center; /* Centraliza tudo no meio da tela */
+  gap: 12px; /* Espaço entre o ícone e o texto */
+  padding-top: 1rem;
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.titulo em {
+  font-style: italic;
+  color: #00ff99d7; /* Dica extra: você pode até dar uma cor diferente para a palavra em itálico! */
+}
+
+.icone-titulo {
+  /* O pulo do gato: 2rem faz a imagem ter exatos 32px (mesma altura do texto) */
+  height: 2rem;
+  width: auto; /* Mantém a proporção da imagem sem distorcer */
+  object-fit: contain;
+}
+
+.input-E-botao {
+  padding-top: 1rem;
+  display: flex;
+  width: 100%;
+  max-width: 800px; /* Largura máxima da barra de busca */
+}
+
+#busca-input {
+  flex: 1;
+  padding: 20px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.837);
+}
+
+.busca-botao {
+  border: none;
+  padding: 0 16px;
+  border-radius: 0 4px 4px 0; /* Arredonda só os cantos da direita */
+  background-color: #6157ff; /* Cor roxa estilo Giphy (ou a que preferir) */
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.busca-botao:hover {
+  background-color: #4b42e0; /* Um pouco mais escuro ao passar o mouse */
+}
+
+.busca-botao.ativo,
+.busca-botao:active {
+  background-color: #3b33bd; /* Cor um pouco mais escura que o hover */
+  transition: transform 0.05s ease; /* Transição ultra rápida */
+}
+
+.conteiner-gifs {
+  width: 100%;
+  /* Aqui no futuro vamos colocar o GIF ou uma grid de GIFs */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /*disposição em colunas*/
+  margin-top: 10px; /* Dá um espaço legal do input */
+  gap: 10px;
+}
+
+.conteiner-gifs img {
+  /*max-width: 100%; /* Garante que a imagem não vaze em telas de celular */
+  /* max-height: 200px; /* Define a altura máxima para a imagem não ocupar a tela toda */
+  /* width: auto;  Mantém a proporção original de largura */
+  /* height: auto;  Mantém a proporção original de altura */
+  flex: 1 1 180px; /* Cada GIF deve tentar ter pelo menos 180px de largura. Se sobrar espaço na linha, eles crescem juntos (1) para preencher tudo. Se faltar espaço, eles encolhem (1)*/
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px; /* Cantos levemente arredondados para um acabamento bonito */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra suave para destacar a imagem */
+}
+
+/* exemplo grid
+.conteiner-gifs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; 
+  margin-top: 20px;
+}*/
+
+.mensagem-status {
+  display: flex;
+  flex-direction: column; /* Coloca o spinner em cima e o texto embaixo */
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1; /* Ocupa todas as colunas se estiver usando Grid */
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 2rem;
+  padding: 40px 0;
+  gap: 1rem;
+}
+
+/* O elemento da rodinha giratória */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #d2d2d2; /* Cor do traço que vai girar (ajuste se seu tema for escuro) */
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+
+/* A regra que faz o elemento girar 360 graus infinitamente */
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

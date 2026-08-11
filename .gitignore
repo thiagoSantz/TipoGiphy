@@ -1,0 +1,15 @@
+Plaintext
+# Dependências
+node_modules/
+
+# Arquivos de prototipação
+src/prototipo/
+
+# Build de produção do Webpack
+dist/
+
+# Arquivos de ambiente (senhas e chaves de API)
+.env
+
+# Logs de erro do NPM
+npm-debug.log*

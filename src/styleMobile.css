@@ -1,0 +1,15 @@
+@media (max-width: 720px) {
+  #busca-input {
+    padding: 25px 25px;
+    font-size: 1.2rem;
+  }
+
+  .busca-botao {
+    padding: 0 36px;
+  }
+
+  .conteiner-gifs img {
+    flex: 1 1 160px;
+    height: 200px;
+  }
+}
