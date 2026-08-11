@@ -1,11 +1,21 @@
 @media (max-width: 720px) {
+  /* Garante que a barra inteira respeite a largura da tela */
+  .input-E-botao {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   #busca-input {
-    padding: 25px 25px;
-    font-size: 1.2rem;
+    padding: 24px 16px; /* Reduzido de 25px para não estourar e ficar proporcional */
+    font-size: 1rem;
+    flex: 1;
+    min-width: 0; /* Permite encolher em telas pequenas */
+    box-sizing: border-box;
   }
 
   .busca-botao {
-    padding: 0 36px;
+    padding: 0 20px; /* Reduzido de 36px para economizar espaço lateral */
+    box-sizing: border-box;
   }
 
   .conteiner-gifs img {
