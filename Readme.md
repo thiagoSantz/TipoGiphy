@@ -36,11 +36,14 @@ Uma aplicação web responsiva que realiza buscas de GIFs em tempo real consumin
 ## 🚀 Como Executar o Projeto Localmente
 
 1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/thiagoSantz/TipoGiphy.git](https://github.com/thiagoSantz/TipoGiphy.git)
+
+   ```
+   git clone https://github.com/thiagoSantz/TipoGiphy.git
    cd TipoGiphy
    npm install
    npm start
+   ```
+
    Acesse a aplicação no seu navegador no endereço: http://localhost:3000
 
 ---
